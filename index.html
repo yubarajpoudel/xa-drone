@@ -1,0 +1,34 @@
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>XA-Drone animation</title>
+        <meta name="description" content="Sample drone animation controlled by mouse">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="drone.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <script>
+            $(document).ready(function() {
+                console.log("document loaded");
+                $('#xa-banner').mousemove(function(e){
+                var moveX=(e.pageX * -1/2)+300;
+                var moveY=(e.pageY * -1/3)+120;
+                $('#xa-drone').css({
+                        'transform':'translate3d('+moveX+'px,'+moveY+'px,0)'
+                });
+            });
+            });
+        </script>
+        <div id="xa-banner">
+            <div id="xa-drone">
+                <img src="images/drone.png" class="drone-pic">
+                <img src="images/blade-left.png" class="left-pic">
+                <img src="images/blade-right.png" class="right-pic">
+            </div>
+        </div>
+    </body>
+</html>
